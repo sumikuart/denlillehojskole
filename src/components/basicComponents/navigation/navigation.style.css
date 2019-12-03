@@ -1,0 +1,112 @@
+.navStyle{
+    background-color: #ff8400;
+    font-family: Arial;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+    width:100%;
+    position: absolute;
+    top:0;
+    left:0;
+    height: 118px;
+
+}
+
+.navStyle nav{
+    width:65%;
+    margin: 0 auto;
+
+}
+
+.navStyle nav.nav{
+    display: block;
+}
+.navStyle nav.seach{
+    display: none;
+}
+
+.navStyle form.nav{
+    display: none;
+}
+.navStyle form.seach{
+    display: flex;
+    justify-content: space-between;
+    width:55%;
+    margin: 0 auto;
+}
+
+.navStyle form.seach input.textSearch{
+    border: 1px solid black;
+    border-radius: 10px;
+    width:75%;
+    font-size: 32px;
+    margin-top: 60px;
+    background-color: #ff8400;
+}
+
+.navStyle form.seach input.submitSearch{
+    border: 1px solid black;
+    border-radius: 10px;
+    width:15%;
+    font-size: 32px;
+    margin-top: 60px;
+    background-color: #ff8400;
+    cursor: pointer;
+}
+
+
+.navStyle form.seach input.submitSearch:hover{
+    background-color:#c36501 ;
+}
+
+.navStyle nav ul.topUl{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 60px;
+}
+
+.navStyle nav ul li {
+    list-style: none;
+    width:100%;
+
+
+}
+
+.navStyle nav ul li a {
+    text-decoration: none;
+    color:black;
+    font-size: 24px;
+}
+
+.navStyle nav ul ul{
+    display: none;
+}
+
+.navStyle nav ul li:hover > ul {
+    display: block;
+    position: relative;
+    top:27px;
+
+    opacity: 1;
+    z-index: 200;
+    background-color: #ff8400;
+    border: 1px solid black;
+    border-top:0;
+    
+}
+
+.navStyle nav ul li:hover > ul a {
+    display: block;
+    padding:8px
+
+}
+
+.navStyle nav ul li:hover > ul a:hover {
+    background-color:#c36501 ;
+}
+
+.navStyle .searchIconHolder {
+    position: absolute;
+    top:35px;
+    left:75%;
+    cursor: pointer;
+}
