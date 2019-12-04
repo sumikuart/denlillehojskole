@@ -63,7 +63,7 @@ const searchOrNavSelect = (e) => {
                     </li>
 
                     <li>
-                        <NavLink to='/'>Korte kurser</NavLink>
+                        <NavLink to='/kortekurser'>Korte kurser</NavLink>
                         <ul>
                             {korteKurserMapper()}
                         </ul>

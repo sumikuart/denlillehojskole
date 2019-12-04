@@ -1,0 +1,55 @@
+.tilmeldStyle {}
+
+.tilmeldStyle .imgContent {}
+
+.tilmeldStyle .imgContent img {
+    width:100%;
+}
+
+.tilmeldStyle .CoursLengthContainer{
+    display: flex;
+    width:40%;
+    justify-content: space-between;
+    margin: 30px auto;
+}
+
+
+.tilmeldStyle .CoursLengthContainer div{
+    font-size:40px;
+    padding:30px;
+    background-color: #ff8400a6;
+    border-radius: 25px;
+}
+
+.tilmeldStyle .CoursLengthContainer div a{
+    text-decoration: none;
+    color:black;
+    display: block;
+}
+
+
+
+.tilmeldStyle .formMappterDiv{
+
+}
+
+.tilmeldStyle .formMappterDiv .langdiv.langeKurser {
+
+}
+
+.tilmeldStyle .formMappterDiv .langdiv.langeKurser input{
+    width:300px;
+}
+
+.tilmeldStyle .formMappterDiv .kortdiv.kortKurser {
+
+}
+
+
+.tilmeldStyle .formMappterDiv .kortdiv.langeKurser {
+    display:none
+}
+
+.tilmeldStyle .formMappterDiv .langdiv.kortKurser {
+    display:none
+}

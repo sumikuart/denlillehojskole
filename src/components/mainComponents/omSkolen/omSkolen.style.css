@@ -1,0 +1,144 @@
+.omSkolenStyle {}
+
+.omSkolenStyle .imgSection .omImgContainer {
+
+}
+
+.omSkolenStyle .imgSection  .omImgContainer img {
+    width:100%;
+    height:500px;
+    display:block;
+}
+
+.omSkolenStyle .imgSection .rightImgMover {
+    opacity: 0.5;
+    transition: 1s;
+
+
+    font-size: 120px;
+    
+    width:150px;
+    text-align: center;
+    border-radius: 25px;
+    padding-bottom: 10px;
+    background-color:none;
+
+    position: absolute;
+    top:300px;
+    left:20%;
+}
+
+.omSkolenStyle .imgSection:hover .rightImgMover {
+    opacity: 1;
+    font-size: 120px;
+    cursor: pointer;
+    background-color:#ff8400a6;
+    width:150px;
+    text-align: center;
+    border-radius: 25px;
+    padding-bottom: 10px;
+
+    position: absolute;
+    color:white;
+    top:300px;
+    left:20%;
+}
+
+.omSkolenStyle .imgSection .leftImgMover {
+    opacity: 0.5;
+    transition: 1s;
+
+
+    font-size: 120px;
+    
+    width:150px;
+    text-align: center;
+    border-radius: 25px;
+    padding-bottom: 10px;
+    background-color:none;
+
+    position: absolute;
+    top:300px;
+    left:80%;
+}
+
+.omSkolenStyle .imgSection:hover .leftImgMover {
+    opacity: 1;
+    font-size: 120px;
+    cursor: pointer;
+    background-color:#ff8400a6;
+    width:150px;
+    text-align: center;
+    border-radius: 25px;
+    padding-bottom: 10px;
+
+    position: absolute;
+    color:white;
+    top:300px;
+    left:80%;
+}
+
+.omSkolenStyle .omSkolenContent {
+    width:40%;
+    margin: 0 auto;
+}
+
+.omSkolenStyle .omSkolenContent .headline {
+    font-size:20px;
+    font-weight: bold;
+
+    margin: 15px 0;
+}
+
+.omSkolenStyle .omSkolenContent p {
+    font-size:18px;
+}
+
+.omSkolenStyle .omSkolenContent p span{
+    display: block;
+    margin-bottom: 20px;
+}
+
+.omSkolenStyle .omSkolenContent .kommendeElevContent {}
+
+
+.omSkolenStyle .omSkolenContent .kommendeElevContent ul{}
+
+.omSkolenStyle .omSkolenContent .kommendeElevContent ul li {
+    list-style: none;
+    margin-bottom: 10px;
+    font-weight: bolder;
+}
+
+.omSkolenStyle .omSkolenContent .kommendeElevContent ul li a {
+
+    color:black;
+
+}
+
+.omSkolenStyle .omSkolenContent  .tilmeldDiv {
+    background-color: black;
+    color:white;
+    width:190px;
+    font-weight: bolder;
+    padding:5px 0;
+
+    margin:40px 0;
+    cursor: pointer;
+}
+
+.omSkolenStyle .omSkolenContent  .tilmeldDiv a {
+    color:white;
+    text-decoration: none;
+    display: flex;
+}
+
+.omSkolenStyle .omSkolenContent  .tilmeldDiv p {
+    padding-top:5px;
+}
+
+.omSkolenStyle .omSkolenContent  .tilmeldDiv p.symbol{
+    font-weight: bolder;
+    font-size:24px;
+    padding: 0 10px;
+}

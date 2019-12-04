@@ -26,7 +26,7 @@
 }
 
 .footerStyle .footerFlexContainer .addressContainer img {
-    width:7%
+    width:15%
 }
 
 .footerStyle .footerFlexContainer .contactContainer {
@@ -80,4 +80,7 @@
       padding:10px;
       border: none;
       font-size: 18px;
+      cursor: pointer;
   }
+
+  
