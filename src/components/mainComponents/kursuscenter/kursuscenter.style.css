@@ -1,0 +1,76 @@
+.kursercenterStyle {
+}
+
+.kursercenterStyle .imgContainer {}
+
+.kursercenterStyle .imgContainer img{
+    width:100%;
+    height:500px;
+}
+
+
+.kursercenterStyle p.headline{
+    font-size:24px;
+    font-weight: bold;
+
+    margin: 15px 0;
+    margin-top:30px;
+}
+
+
+.kursercenterStyle .kurususcenterContent {
+    width:40%;
+    margin: 0 auto;
+    font-size: 16px;
+
+
+}
+
+.kursercenterStyle .kurususcenterContent  .infoText .smallHeadline{
+    font-size:18px;
+    font-weight: bold;
+
+    margin-top:30px;
+}
+
+.kursercenterStyle .kurususcenterContent .infoText p:nth-last-child(2){
+
+    margin-bottom: 30px;
+}
+
+.kursercenterStyle .kurususcenterContent .infoText p:nth-last-child(1){
+
+    margin-bottom: 230px;
+}
+
+
+
+.kursercenterStyle .kurususcenterContent .signaturCenter {
+display: flex;
+width:40%;
+margin: 100px auto;
+position: relative;
+left:0px;
+top:10px;
+
+}
+
+.kursercenterStyle .kurususcenterContent .signaturCenter img {
+
+    position: absolute;
+    right:0px;
+    bottom:0px;
+
+}
+
+.kursercenterStyle .kurususcenterContent .signaturCenter  .superheadline {
+    font-size:26px;
+    font-weight: bold;
+
+    margin-top:30px;
+    
+    position: absolute;
+    left:00px;
+    bottom:0px;
+
+}

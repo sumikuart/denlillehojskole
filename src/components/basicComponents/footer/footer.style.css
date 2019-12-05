@@ -1,6 +1,7 @@
 .footerStyle {
     width:100%;
     background-color: #ff8400;
+    z-index: 100;
 }
 
 .footerStyle .footerFlexContainer {

@@ -1,0 +1,114 @@
+.studietureStyle {
+}
+
+.studietureStyle .omImgContainer {}
+
+.studietureStyle .omImgContainer img{
+    width:100%;
+    height: 500px;
+}
+
+
+.studietureStyle .studieTureContent {
+    width:40%;
+    margin:0 auto;
+}
+
+.studietureStyle .studieTureContent .studietureText {
+    padding-bottom: 20px;
+    border-bottom: 2px solid black;
+    
+}
+
+.studietureStyle .studieTureContent  .headline {
+    font-weight: bold;
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+
+.studietureStyle .studieTureContent .studietureText  .underheadline {
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.studietureStyle .studieTureContent .studieTureGalleri .studieTureGalleriFlexer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.studietureStyle .studieTureContent .studieTureGalleri .studieTureGalleriFlexer .imgContainer {
+    width:30%;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    z-index: 10;
+}
+
+.studietureStyle .studieTureContent .studieTureGalleri .studieTureGalleriFlexer .imgContainer img{
+    display: block;
+    width:100%;
+    
+}
+
+
+/* SET UP GALLERI */
+
+.studietureStyle .galleriContainer.show{
+
+    width:100%;
+    height:1940px;
+    
+    background-color: rgba(0, 0, 0, 0.61);
+    
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: 100;
+}
+
+.studietureStyle .galleriContainer.show .galleriPosition {
+    position: absolute;
+    bottom: 25%;
+    left:50%;
+    transform: translateX(-50%);
+}
+
+.studietureStyle .galleriContainer.show .galleriCloser {
+    color: white;
+    background-color: #ff8400;
+    font-size: 24px;
+    padding:10px;
+    border-radius: 55px;
+    width:48px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    top: 100%;
+    left:100%;
+    opacity: 0.5;
+    transition: 0.5s;
+}
+
+.studietureStyle .galleriContainer.show .galleriCloser:hover {
+    opacity: 1;
+}
+
+.studietureStyle .galleriContainer.hide{
+    display: none;
+}
+
+
+.studietureStyle .galleriContainer.show .galleriImgHolder{
+    width:500px;
+    -webkit-box-shadow: 0px 0px 122px 70px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 122px 70px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 122px 70px rgba(0,0,0,0.75);
+}
+
+
+
+.studietureStyle .galleriContainer.show .galleriImgHolder img{
+    width:100%
+}

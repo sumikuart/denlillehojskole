@@ -55,10 +55,10 @@ const searchOrNavSelect = (e) => {
             <nav className={navFunctionState}>
                 <ul className="topUl">
                     <li>
-                        <NavLink to='/'>Lange kurser</NavLink>
+                        <NavLink to='/langekurser'>Lange kurser</NavLink>
                         <ul>
                             <li><NavLink to='/'>Priser og tilskud</NavLink></li>
-                            <li><NavLink to='/'>Linjefag</NavLink></li>
+                            <li><NavLink to='/langekurser/linjefag'>Linjefag</NavLink></li>
                         </ul>
                     </li>
 
@@ -69,8 +69,8 @@ const searchOrNavSelect = (e) => {
                         </ul>
                     </li>
 
-                    <li><NavLink to='/'>Studieture </NavLink></li>
-                    <li><NavLink to='/'>Kursuscenter</NavLink></li>
+                    <li><NavLink to='/studietur'>Studieture </NavLink></li>
+                    <li><NavLink to='/kursuscenter'>Kursuscenter</NavLink></li>
                     <li><NavLink to='/'>Om skolen</NavLink></li>
                 </ul>
             </nav>

@@ -6,9 +6,14 @@
     width:100%;
 }
 
+.tilmeldStyle .tilmeldContent {
+    width:40%;
+    margin: 0 auto;
+}
+
 .tilmeldStyle .CoursLengthContainer{
     display: flex;
-    width:40%;
+    width:80%;
     justify-content: space-between;
     margin: 30px auto;
 }
@@ -33,23 +38,111 @@
 
 }
 
-.tilmeldStyle .formMappterDiv .langdiv.langeKurser {
+/*  her vises hvilken type Form der skal vises (Kort/lang)*/
+.tilmeldStyle .formMappterDiv .langdiv.langeKurser,
+.tilmeldStyle .formMappterDiv .kortdiv.kortKurser {}
 
+.tilmeldStyle .formMappterDiv .kortdiv.langeKurser,
+.tilmeldStyle .formMappterDiv .langdiv.kortKurser {display:none} 
+
+
+/* Style BEGGE TILMEDLING */
+.tilmeldStyle .tilmeldContent .headline {
+
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+ }
+
+ .tilmeldStyle .tilmeldContent  .selectFormFlexer,
+ .tilmeldStyle .tilmeldContent  .formFlexer {
+     display: flex;
+     justify-content: space-between;
+     flex-wrap: wrap;
+     margin: 40px 0;
+ }
+
+ .tilmeldStyle .tilmeldContent input{
+     display: block;
+ }
+
+ .tilmeldStyle .tilmeldContent label {
+     font-size: 14px;
+     font-weight: bold;
+     display: block;
+     margin: 10px 0;
+ }
+
+ .tilmeldStyle .tilmeldContent textarea {
+     width:100%;
+     height: 150px;
+     font-size: 18px;
+ }
+
+ 
+ .tilmeldStyle .tilmeldContent .formFlexer div {
+    width:49%;
 }
 
-.tilmeldStyle .formMappterDiv .langdiv.langeKurser input{
-    width:300px;
+.tilmeldStyle .tilmeldContent .formFlexer div input {
+    display: block;
+    width:100%;
+    padding: 10px 0;
 }
 
-.tilmeldStyle .formMappterDiv .kortdiv.kortKurser {
+.tilmeldStyle .tilmeldContent .tilmeldDiv {
+    background-color: black;
+    color:white;
+    width:190px;
+    font-weight: bolder;
+    padding:5px 0;
 
+    margin:40px 0;
+    cursor: pointer;
 }
 
 
-.tilmeldStyle .formMappterDiv .kortdiv.langeKurser {
-    display:none
+.tilmeldStyle .tilmeldContent  .tilmeldDiv a {
+    color:white;
+    text-decoration: none;
+    display: flex;
 }
 
-.tilmeldStyle .formMappterDiv .langdiv.kortKurser {
-    display:none
+
+.tilmeldStyle .tilmeldContent  .tilmeldDiv p {
+    padding-top:5px;
 }
+
+
+.tilmeldStyle .tilmeldContent .tilmeldDiv p.symbol{
+    font-weight: bolder;
+    font-size:24px;
+    padding: 0 10px;
+}
+
+ /* Style KORT KURSUS TILMELDING */
+
+ .tilmeldStyle .tilmeldContent .kortdiv select {
+    width:100%;
+    padding: 10px 0;
+    font-weight: bold;
+ }
+
+  /* Style LANG KURSUS TILMELDING */
+
+  
+  .tilmeldStyle .tilmeldContent .langdiv .formCenter {
+      width:50%;
+      margin: 30px auto;
+
+  }
+
+  .tilmeldStyle .tilmeldContent .langdiv .formCenter label {
+      display: inline;
+      font-size: 18px;
+    margin-right: 10px;
+  }
+
+  .tilmeldStyle .tilmeldContent .langdiv .formCenter select {
+      padding:10px;
+  }
