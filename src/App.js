@@ -11,7 +11,7 @@
 // Dag 2:
 // om Skolen, banner: 08.30 - 09.36 (1 time 6min)
 // om Skolen, content: 09.36 - 10.16 (40 min)
-// Tilmældings Component: 10.16 - 12.59 (2 timer 43 min) <<<---- Problemer med at snakke med State
+// Tilmældings Component: 10.16 - 12.59 (2 timer 43 min) <<<---- Problemer med at bruge useState
 // korte Kurser: 13.00 - 13.45 (45 min)
 
 // Dag 3: 
@@ -23,6 +23,8 @@
 // Style Tilmelding: 12.13 - 12.55 (42 min)
 // Context -> lav side for linjefag: 12.56 - 14.38 (1 time 34 min) <<<---- Problemer med at overføre Data fra Context til side, basseret på URL
 
+// Dag 4:
+// Validere tilmeldings form: 08.15 -11.01 (2 timer 46 min)
 
 // Main:
 import React from 'react';

@@ -20,7 +20,7 @@ const HoldOptionsPoster = (props) => {
 
 const KurserOptionsPoster = (props) => {
     return (
-        <option value={props.currentHold.id}> {props.currentHold.title} </option>
+        <option value={props.currentHold.navn}> {props.currentHold.title} </option>
     )
 }
 
@@ -30,10 +30,6 @@ const TilmeldComponent = (props) => {
     var kursusType = props.match.params.type
 
     const { hold } = useContext(holdContext);
-
-
-    const [longName, setLongName] = useState([{ name: 'a' }])
-
 
     const holdMapper = (e) => {
         return hold.map(function (currentHold, i) {
@@ -51,9 +47,257 @@ const TilmeldComponent = (props) => {
         })
     }
 
-    const langHandelName = (e) => {
-        setLongName([{ name: e.target.value }]);
+    // Validering:
+
+    const [Name, setName] = useState('');;
+    const [lastName, setLastName] = useState('');;
+    const [adresse, setAdresse] = useState('');;
+    const [postnummer, setPostnummer] = useState('');;
+    const [by, setBy] = useState('');;
+    const [mobil, setMobil] = useState('');;
+    const [mail, setMail] = useState('');;
+    const [besked, setBesked] = useState('');;
+
+    // Local - Kort:
+    const [kursus, setKursus] = useState('none');
+
+    // Local - lang
+    const [holdData, setholdData] = useState('none');
+    const [fagData, setFagData] = useState('none' );
+    const [studieTurValg, setStudieTurValg] = useState('none' );
+
+    const HandelName = (e) => {
+        setName(e.target.value);
     }
+    const HandelLastName = (e) => {
+        setLastName(e.target.value);
+    }
+    const HandelAdresse = (e) => {
+        setAdresse(e.target.value);
+    }
+    const HandelPostnummer = (e) => {
+        setPostnummer(e.target.value);
+    }
+    const HandelBy = (e) => {
+        setBy(e.target.value);
+    }
+    const HandelMobil = (e) => {
+        setMobil(e.target.value);
+    }
+    const HandelMail = (e) => {
+        setMail(e.target.value);
+    }
+    const HandelBesked = (e) => {
+        setBesked(e.target.value);
+    }
+
+    const HandelKursus = (e) => {
+        setKursus(e.target.value);
+    }
+
+    const HandelHoldData = (e) => {
+
+        setholdData(e.target.value);
+    }
+    const HandelFagData = (e) => {
+        setFagData( e.target.value );  
+    }
+    const HandelStudieTurValg = (e) => {
+        setStudieTurValg( e.target.value );
+    }
+
+// VALIDERINGS FUNCTIONER: 
+const [valideringsCounter, setValideringsCounter] = useState (0);
+
+
+const [errorHoldData, setErrorHoldData] = useState('');
+const [errorFagData, setErrorFagData] = useState('');
+const [errorStudieTurValg, setErrorStudieTurValg] = useState('');
+
+const [errorKurusValg, seterrorKurusValg] = useState('');
+
+
+
+
+
+// LOCAL VALIDERING KORT:
+const validerKursusData = (e) => {
+    const data = kursus
+
+    console.log(data)
+    if(data == 'none') {
+        seterrorKurusValg('Du Mangler at Vælge Kursus')
+    } else {
+        seterrorKurusValg('')
+        setValideringsCounter(0)
+    }
+}
+
+
+// LOCAL VALIDERING LANG:
+const validerHoldData = (e) => {
+    const data = holdData
+
+    console.log(data)
+    if(data == 'none') {
+        setErrorHoldData('Du Mangler at Vælge Hold')
+    } else {
+        setErrorHoldData('')
+        setValideringsCounter(0)
+    }
+}
+
+const validerFagData = (e) => {
+    const data = fagData
+    if(data == 'none') {
+        setErrorFagData('Du Mangler at vælge Fag')
+    } else {
+        setErrorFagData('')
+        setValideringsCounter(0)
+    }
+}
+
+const validerStudieturValg = (e) => {
+    const data = studieTurValg
+    if(data == 'none') {
+        setErrorStudieTurValg('Du Mangler at vælge om du vil med på tur')
+    } else {
+        setErrorStudieTurValg('')
+        setValideringsCounter(0)
+    }
+}
+
+
+
+// Global Validering:
+
+// Global Error: 
+const [errorfornavn, setErrorfornavn] = useState('');
+const [errorEfternavn, setErrorEfternavn] = useState('');
+
+const [errorAdresse, setErrorAdresse] = useState('');
+const [errorPostnummer, setErrorPostnummer] = useState('');
+const [errorBy, setErrorBy] = useState('');
+const [errorMobil, setErrorMobil] = useState('');
+const [errorMail, setErrorMail] = useState('');
+const [errorBesked, setErrorBesked] = useState('');
+
+var hasNumber = /\d/;
+
+var hasLetter = /[a-z]/i;
+
+
+const validerFornavn = (e) => {
+
+    if(Name == '' || hasNumber.test(Name) ){
+        setErrorfornavn('Der er fejl i fornavn')
+    } else {
+        setErrorfornavn('') 
+    }
+
+}
+
+const validerEfternavn = (e) => {
+
+    if(lastName == '' || hasNumber.test(lastName) ){
+        setErrorEfternavn('Der er fejl i Efternavn')
+    } else {
+        setErrorEfternavn('') 
+    }
+
+}
+
+const validerAdresse = (e) => {
+    if(adresse == ''){   
+        setErrorAdresse('Der er fejl i addresse')
+    }  else {
+        setErrorAdresse('')
+    }
+    
+}
+
+
+const validerPostnummer = (e) => {
+    if(postnummer == '' || hasLetter.test(postnummer)){   
+        setErrorPostnummer('Der er fejl i postnummer')
+    }  else {
+        setErrorPostnummer('')
+    }
+    
+}
+
+const validerBy = (e) => {
+    if(by == '' || hasNumber.test(by)){   
+        setErrorBy('Der er fejl i By')
+    }  else {
+        setErrorBy('')
+    }
+    
+}
+
+const validerMobil = (e) => {
+    if(mobil == '' || hasLetter.test(mobil)){   
+        setErrorMobil('Der er fejl i Mobil nummer')
+    }  else {
+        setErrorMobil('')
+    }
+    
+}
+
+const validerMail = (e) => {
+    if(mail == '' || !mail.includes('@')  || !mail.includes('.')){   
+        setErrorMail('Der er fejl i Mail')
+    }  else {
+        setErrorMail('')
+    }
+    
+}
+
+// const [besked, setBesked] = useState('');
+
+const validerBesked = (e) => {
+    if(besked == ''){   
+        setErrorBesked('Der er fejl i Besked')
+    }  else {
+        setErrorBesked('')
+    }
+    
+}
+
+
+
+const finalValidering = (e) => {
+if(kursusType=== 'langeKurser'){
+        
+        if(holdData === 'none') {
+            setErrorHoldData('Du Mangler at Vælge Hold')
+        }
+
+        if(fagData === 'none') {
+            setErrorFagData('Du Mangler at Vælge Hold')
+        }
+
+        if(studieTurValg === 'none') {
+            setErrorStudieTurValg('Du Mangler at Vælge Hold')
+        } 
+    } 
+
+    if(kursusType=== 'kortKurser'){ 
+
+        if(kursus === 'none') {
+            seterrorKurusValg('Du Mangler at Vælge Kursus')
+        } 
+    }
+
+    validerFornavn()
+    validerEfternavn()
+    validerAdresse()
+    validerPostnummer()
+    validerBy()
+    validerMobil()
+    validerMail()
+    validerBesked()
+}
 
     return (
         <div className="tilmeldStyle">
@@ -92,34 +336,44 @@ const TilmeldComponent = (props) => {
                         <form>
 
                             <div className='selectFormFlexer'>
-                                <label>Vælg Hold:</label>
-                                <select>
-                                    <option>vælg Hold</option>
+                                <div>
+                                <label>Vælg Hold</label>
+                                <div className='errorM'>{errorHoldData}</div>
+                                <select onChange={HandelHoldData} onBlur={validerHoldData}>
+                                    <option value='none'>vælg Hold</option>
                                     {holdMapper()}
                                 </select>
+                                </div>
 
+                                <div className='linjeFagContainer'>
                                 <label>Valg af linjefag:</label>
-                                <select>
-                                    <option>vælg Linjefag</option>
-                                    <option>FOTO</option>
-                                    <option>SANGSKRIVER</option>
-                                    <option>E-MUSIK</option>
-                                    <option>DANS</option>
-                                    <option>ADVENTURESPORT</option>
+                                <div className='errorM'>{errorFagData}</div>
+                                <select onChange={HandelFagData} onBlur={validerFagData}>
+                                    <option value='none'>vælg Linjefag</option>
+                                    <option value='FOTO'>FOTO</option>
+                                    <option value='SANGSKRIVER'>SANGSKRIVER</option>
+                                    <option value='E-MUSIK'>E-MUSIK</option>
+                                    <option value='DANS'>DANS</option>
+                                    <option value='ADVENTURESPORT'>ADVENTURESPORT</option>
                                 </select>
+                                </div>
 
                             </div>
+
+
 
 
                             <div className='formFlexer'>
                                 <div>
                                     <label>Fornavn:</label>
-                                    <input type="text" value={longName[0].name} onChange={langHandelName} />
+                                    <div className='errorM'>{errorfornavn}</div>
+                                    <input type="text" value={Name} onChange={HandelName} onBlur={validerFornavn}/>
                                 </div>
 
                                 <div>
                                     <label>efternavn:</label>
-                                    <input type="text" value={longName[0].name} onChange={langHandelName} />
+                                    <div className='errorM'>{errorEfternavn}</div>
+                                    <input type="text" value={lastName} onChange={HandelLastName} onBlur={validerEfternavn} />
                                 </div>
                             </div>
 
@@ -127,17 +381,20 @@ const TilmeldComponent = (props) => {
                             <div className='formFlexer'>
                                 <div>
                                     <label>Adresse:</label>
-                                    <input type="text" value={longName[0].name} onChange={langHandelName} />
+                                    <div className='errorM'>{errorAdresse}</div>
+                                    <input type="text" value={adresse} onChange={HandelAdresse} onBlur={validerAdresse} />
                                 </div>
 
                                 <div>
                                     <label>Postnummer:</label>
-                                    <input type="text" value={longName[0].name} onChange={langHandelName} />
+                                    <div className='errorM'>{errorPostnummer}</div>
+                                    <input type="text" value={postnummer} onChange={HandelPostnummer} onBlur={validerPostnummer}/>
                                 </div>
 
                                 <div>
                                     <label>By:</label>
-                                    <input type="text" value={longName[0].name} onChange={langHandelName} />
+                                    <div className='errorM'>{errorBy}</div>
+                                    <input type="text" value={by} onChange={HandelBy} onBlur={validerBy}/>
                                 </div>
                             </div>
 
@@ -145,33 +402,38 @@ const TilmeldComponent = (props) => {
                             <div className='formFlexer'>
                                 <div>
                                     <label>Mobil:</label>
-                                    <input type="text" value={longName[0].name} onChange={langHandelName} />
+                                    <div className='errorM'>{errorMobil}</div>
+                                    <input type="text" value={mobil} onChange={HandelMobil} onBlur={validerMobil} />
                                 </div>
                                 <div>
                                     <label>Mail:</label>
-                                    <input type="text" value={longName[0].name} onChange={langHandelName} />
+                                    <div className='errorM'>{errorMail}</div>
+                                    <input type="text" value={mail} onChange={HandelMail} onBlur={validerMail}/>
                                 </div>
                             </div>
 
 
                             <label>Bemærkninger:</label>
-                            <textarea placeholder='skriv en bemærkning'></textarea>
+                            <div className='errorM'>{errorBesked}</div>
+                            <textarea placeholder='skriv en bemærkning' value={besked} onChange={HandelBesked} onBlur={validerBesked}></textarea>
 
                             <div className='formCenter'>
                                 <label> Ønsker du at deltage i Studieturen:</label>
-                                <select>
-                                    <option>Nej</option>
-                                    <option>Ja</option>
+                                <div className='errorM'>{errorStudieTurValg}</div>
+                                <select onChange={HandelStudieTurValg} onBlur={validerStudieturValg}>
+                                    <option value='none'>Vælg</option>
+                                    <option  value='ja'>Nej</option>
+                                    <option  value='nej'>Ja</option>
                                 </select>
                             </div>
 
                         </form>
-                        <div className='tilmeldDiv'>
+                        <div className='tilmeldDiv' onClick={finalValidering}>
 
-                            <NavLink to='/'>
+                         
                                 <p className='symbol'>&radic;</p>
-                                <p>Tilmeld dig her</p>
-                            </NavLink>
+                                <p>Til Betaling</p>
+                           
                         </div>
                     </div>
 
@@ -181,63 +443,76 @@ const TilmeldComponent = (props) => {
 
                         <form>
                             <label>Vælg Kursus:</label>
-                            <select>
-                                <option>vælg kursus</option>
+                            <div className='errorM' >{errorKurusValg}</div>
+                            <select onChange={HandelKursus} onBlur={validerKursusData}>
+                                <option value='none'>vælg kursus</option>
                                 {mapKurser()}
                             </select>
 
 
                             <div className='formFlexer'>
-                                <div>
+                            <div>
                                     <label>Fornavn:</label>
-                                    <input type="text" value={longName[0].name} onChange={langHandelName} />
+                                    <div className='errorM'>{errorfornavn}</div>
+                                    <input type="text" value={Name} onChange={HandelName} onBlur={validerFornavn}/>
                                 </div>
 
                                 <div>
                                     <label>efternavn:</label>
-                                    <input type="text" value={longName[0].name} onChange={langHandelName} />
+                                    <div className='errorM'>{errorEfternavn}</div>
+                                    <input type="text" value={lastName} onChange={HandelLastName} onBlur={validerEfternavn} />
                                 </div>
                             </div>
+
 
                             <div className='formFlexer'>
                                 <div>
                                     <label>Adresse:</label>
-                                    <input type="text" value={longName[0].name} onChange={langHandelName} />
+                                    <div className='errorM'>{errorAdresse}</div>
+                                    <input type="text" value={adresse} onChange={HandelAdresse} onBlur={validerAdresse} />
                                 </div>
 
                                 <div>
                                     <label>Postnummer:</label>
-                                    <input type="text" value={longName[0].name} onChange={langHandelName} />
+                                    <div className='errorM'>{errorPostnummer}</div>
+                                    <input type="text" value={postnummer} onChange={HandelPostnummer} onBlur={validerPostnummer}/>
                                 </div>
 
                                 <div>
                                     <label>By:</label>
-                                    <input type="text" value={longName[0].name} onChange={langHandelName} />
+                                    <div className='errorM'>{errorBy}</div>
+                                    <input type="text" value={by} onChange={HandelBy} onBlur={validerBy}/>
                                 </div>
                             </div>
+
 
                             <div className='formFlexer'>
                                 <div>
                                     <label>Mobil:</label>
-                                    <input type="text" value={longName[0].name} onChange={langHandelName} />
+                                    <div className='errorM'>{errorMobil}</div>
+                                    <input type="text" value={mobil} onChange={HandelMobil} onBlur={validerMobil} />
                                 </div>
-
                                 <div>
                                     <label>Mail:</label>
-                                    <input type="text" value={longName[0].name} onChange={langHandelName} />
+                                    <div className='errorM'>{errorMail}</div>
+                                    <input type="text" value={mail} onChange={HandelMail} onBlur={validerMail}/>
                                 </div>
                             </div>
 
+
                             <label>Bemærkninger:</label>
-                            <textarea placeholder='skriv en bemærkning'></textarea>
+                            <div className='errorM'>{errorBesked}</div>
+                            <textarea placeholder='skriv en bemærkning' value={besked} onChange={HandelBesked} onBlur={validerBesked}></textarea>
+
+
                         </form>
+ 
+                        <div className='tilmeldDiv' onClick={finalValidering}>
 
-                        <div className='tilmeldDiv'>
 
-                            <NavLink to='/c'>
                                 <p className='symbol'>&radic;</p>
-                                <p>Tilmeld dig her</p>
-                            </NavLink>
+                                <p>Til Betaling</p>
+
                         </div>
                     </div>
 
